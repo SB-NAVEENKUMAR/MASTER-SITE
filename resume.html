@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Naveenkumar B</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* A4 Page Setup */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.4;
+            color: #222;
+            margin: 0;
+            padding: 0;
+            background-color: #525659;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 12mm 15mm;
+            /* Balanced margins to prevent overflow */
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            /* Strict single-page enforcement */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #000;
+            letter-spacing: 1px;
+        }
+
+        .contact {
+            font-size: 12px;
+            margin-top: 4px;
+            color: #444;
+        }
+
+        h2 {
+            font-size: 14px;
+            border-bottom: 1.5px solid #444;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            padding-bottom: 2px;
+            color: #002D62;
+        }
+
+        .summary {
+            font-size: 11.5px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 11.5px;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .bold {
+            font-weight: bold;
+            color: #111;
+        }
+
+        .edu-item {
+            margin-bottom: 8px;
+            font-size: 11.5px;
+        }
+
+        .location {
+            font-style: italic;
+            color: #666;
+            font-size: 10.5px;
+        }
+
+        /* Print/Download Logic */
+        .controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+
+        .btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+
+            .controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="controls">
+        <button class="btn" onclick="window.print()">Download A4 PDF</button>
+    </div>
+
+    <div class="page">
+        <header>
+            <h1>NAVEENKUMAR B</h1>
+            <div class="contact">
+                6374793361 &bull; naveenkumar.b.9009@gmail.com &bull; RANIPET 632505
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Versatile developer proficient in <span class="bold">Python, Java, and SQL</span>, specializing in
+                high-performance backend architecture. Expert at leveraging <span class="bold">Data Structures and
+                    Algorithms (DSA)</span> to transform complex logic into efficient software. Currently pioneering
+                <span class="bold">secure, offline-capable AI</span> by integrating local LLMs (DeepSeek/Llama) via LM
+                Studio to ensure data privacy and system autonomy.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="grid">
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">Languages:</span> Python (Django), Java, C, SQL, Jython.</li>
+                        <li><span class="bold">Full-Stack:</span> HTML5, CSS3, JavaScript, Django Backend.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">AI & Data:</span> Local LLM, Power BI, Tableau, Advanced Excel.</li>
+                        <li><span class="bold">Tools:</span> Fusion 360, BCI, OS Optimization, Git.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Projects</h2>
+            <div class="grid">
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">CarePlus (Medical AI):</span> Architecting offline-capable medical
+                            analysis tools using Local LLMs and LM Studio for privacy-first diagnostics.</li>
+                        <li><span class="bold">Big Tech Analytics:</span> Data-driven performance analysis of Google and
+                            Amazon datasets via Power BI and Tableau.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">Management Systems:</span> Engineered Python/SQL Library and Admission
+                            automation with custom GUI workflows.</li>
+                        <li><span class="bold">Logic Tools:</span> Developed an algorithmic Logo Generator and GUI Quiz
+                            Engine using custom Python scripting.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="edu-item">
+                <span class="bold">B.TECH in Information Technology</span> (2024–2028) | <span class="bold">CGPA:
+                    8.68</span><br>
+                Adhi College of Engineering and Technology <span class="location">| Kanchipuram, TN</span>
+            </div>
+            <div class="edu-item">
+                <span class="bold">HSC</span> | Percentage: 84% <span class="location">| Govt Boys Higher Secondary
+                    School, Sholinghur</span>
+            </div>
+            <div class="edu-item">
+                <span class="bold">SSLC</span> | Percentage: 86% <span class="location">| Government High School,
+                    Polipakkam</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <div class="grid">
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">Brain-Computer Interfacing (BCI):</span> Tech Training.</li>
+                        <li><span class="bold">Python & MS Excel:</span> Cambridge Certified.</li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><span class="bold">Full-Stack Dev:</span> NoviTech Intensive.</li>
+                        <li><span class="bold">Data Analytics:</span> Jobaaj Learnings / B Tree.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

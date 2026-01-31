@@ -14545,8 +14545,8 @@ img {
 .home-slider.owl-carousel .owl-stage-outer,
 .home-slider.owl-carousel .owl-stage,
 .home-slider.owl-carousel .owl-item {
-  -ms-touch-action: pan-y !important;
-  touch-action: pan-y !important;
+  -ms-touch-action: pan-y pinch-zoom !important;
+  touch-action: pan-y pinch-zoom !important;
 }
 
 /* Ensure no other overlays block scrolling */

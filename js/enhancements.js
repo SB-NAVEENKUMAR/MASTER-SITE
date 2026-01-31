@@ -101,4 +101,53 @@
         document.body.appendChild(css);
     };
 
+    // 3. 3D TILT EFFECT FOR PROJECT CARDS
+    // Simple vanilla JS implementation to avoid extra dependencies
+    $('.project').on('mousemove', function (e) {
+        const customCard = this;
+        const rect = customCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -5; // Max rotation deg
+        const rotateY = ((x - centerX) / centerX) * 5;
+
+        $(this).css({
+            'transform': `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`,
+            'transition': 'transform 0.1s ease'
+        });
+    });
+
+    $('.project').on('mouseleave', function () {
+        $(this).css({
+            'transform': 'perspective(1000px) rotateX(0) rotateY(0) scale(1)',
+            'transition': 'transform 0.5s ease'
+        });
+    });
+
+    // 4. MAGNETIC RIPPLE BUTTON EFFECT
+    $('.btn-primary, .btn-secondary').on('mouseenter', function (e) {
+        var parentOffset = $(this).offset();
+        var relX = e.pageX - parentOffset.left;
+        var relY = e.pageY - parentOffset.top;
+        $(this).prev(".su_button_circle").remove();
+        $(this).find(".su_button_circle").remove();
+        $(this).prepend("<span class='su_button_circle'></span>");
+        $(this).find(".su_button_circle").removeClass("desplode-circle");
+        $(this).find(".su_button_circle").css({ left: relX, top: relY });
+        $(this).find(".su_button_circle").addClass("explode-circle");
+    });
+
+    $('.btn-primary, .btn-secondary').on('mouseleave', function (e) {
+        var parentOffset = $(this).offset();
+        var relX = e.pageX - parentOffset.left;
+        var relY = e.pageY - parentOffset.top;
+        $(this).find(".su_button_circle").css({ left: relX, top: relY });
+        $(this).find(".su_button_circle").removeClass("explode-circle");
+        $(this).find(".su_button_circle").addClass("desplode-circle");
+    });
+
 })(jQuery);

@@ -14407,8 +14407,13 @@ img {
   }
 
   .project:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     z-index: 2;
+  }
+
+  .project {
+    transition: all 0.3s ease;
   }
 }
 
@@ -14547,4 +14552,42 @@ img {
 /* Ensure no other overlays block scrolling */
 .home-slider .overlay {
   pointer-events: none;
+}
+
+/* Button Ripple Effect */
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.su_button_circle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}
+
+.explode-circle {
+  animation: ripple 0.6s linear;
+}
+
+.desplode-circle {
+  animation: ripple 0.6s linear;
 }

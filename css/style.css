@@ -14533,3 +14533,18 @@ img {
     background: #D4AF37;
     border-radius: 50%;
   }
+}
+
+/* Fix for mobile scroll on Owl Carousel */
+.home-slider.owl-carousel,
+.home-slider.owl-carousel .owl-stage-outer,
+.home-slider.owl-carousel .owl-stage,
+.home-slider.owl-carousel .owl-item {
+  -ms-touch-action: pan-y !important;
+  touch-action: pan-y !important;
+}
+
+/* Ensure no other overlays block scrolling */
+.home-slider .overlay {
+  pointer-events: none;
+}

@@ -45,5 +45,8 @@ A professional, high-performance personal portfolio website designed to showcase
 ## 👤 Author
 
 **Naveenkumar B**
+* **Instagram**: [always_love_in_all](https://www.instagram.com/always_love_in_all/)
+* **LeetCode**: [View Profile](https://leetcode.com/u/NAVEENKUMAR_SB/)
+* **GitHub**: [View Repositories](https://github.com/SB-NAVEENKUMAR)
 * **LinkedIn**: [View Profile](https://www.linkedin.com/in/naveenkumar-sb-716315305)
 * **Freelancer**: [Hire Me](https://www.freelancer.com/u/naveenkumarb9009?sb=t)

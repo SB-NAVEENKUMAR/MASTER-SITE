@@ -14008,21 +14008,15 @@ textarea.form-control {
 }
 
 body.light-theme {
-  --bg-body: #f4f7f6;
-  /* Porcelain / Cool Grey */
-  --bg-section: #ffffff;
-  /* Pure White */
-  --bg-overlay: rgba(255, 255, 255, 0.95);
-  --text-main: #2c3e50;
-  /* Midnight Blue-Grey (Professional) */
-  --text-muted: #596275;
-  /* Slate Grey */
-  --heading-color: #000000;
-  --card-bg: #ffffff;
-  /* Clean Card */
-  --nav-color: #000000;
-  --icon-color: #C5A059;
-  /* Darker Gold for visibility on white */
+  --bg-body: #f8fafc; /* Sleek airy porcelain background */
+  --bg-section: #ffffff; 
+  --bg-overlay: rgba(255, 255, 255, 0.85); /* Frosty overlay */
+  --text-main: #1e293b; /* Crisp Midnight Slates */
+  --text-muted: #475569;
+  --heading-color: #0f172a; /* Deep Midnight Blue */
+  --card-bg: rgba(255, 255, 255, 0.65); /* Clean Glass Card */
+  --nav-color: #0f172a;
+  --icon-color: #C5A059; /* Elegant dark gold */
 }
 
 /* Global Transitions */
@@ -14088,9 +14082,11 @@ body.light-theme .services-1 {
 
 /* Navbar */
 body.light-theme .navbar-brand {
-  color: #000 !important;
-  -webkit-text-fill-color: #000 !important;
+  background: linear-gradient(135deg, #0f172a 0%, #C5A059 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
   -webkit-text-stroke: 0px !important;
+  text-shadow: none !important;
 }
 
 body.light-theme .nav-link span {
@@ -14198,10 +14194,22 @@ body.light-theme .theme-switch-btn {
 body.light-theme .resume-wrap,
 body.light-theme .services-1,
 body.light-theme .project,
-body.light-theme .ftco-footer-widget {
-  background: rgba(255, 255, 255, 0.7) !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+body.light-theme .ftco-footer-widget,
+body.light-theme .blog-entry {
+  background: rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.light-theme .resume-wrap:hover,
+body.light-theme .services-1:hover,
+body.light-theme .project:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12) !important;
+  border-color: rgba(197, 160, 89, 0.4) !important;
 }
 
 /* 3. Gradient Text Effect */

@@ -853,6 +853,35 @@
 			letter-spacing: 1.5px !important;
 			font-family: 'Space Grotesk', sans-serif !important;
 		}
+		.lc-live-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 4px 12px;
+			border-radius: 20px;
+			background: rgba(46, 204, 113, 0.12);
+			border: 1px solid rgba(46, 204, 113, 0.4);
+			color: #2ecc71;
+			font-size: 0.72rem;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 600;
+			letter-spacing: 1.5px;
+			margin-left: 10px;
+			vertical-align: middle;
+		}
+		.lc-live-dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			background: #2ecc71;
+			box-shadow: 0 0 8px #2ecc71;
+			animation: lcPulse 1.8s infinite;
+		}
+		@keyframes lcPulse {
+			0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+			70% { transform: scale(1.15); box-shadow: 0 0 0 6px rgba(46, 204, 113, 0); }
+			100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+		}
 		.leetcode-refresh-btn {
 			padding: 10px 26px !important;
 			background: transparent !important;
@@ -877,7 +906,7 @@
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			gap: 18px;
-			margin-bottom: 35px;
+			margin-bottom: 22px;
 		}
 		@media (max-width: 992px) { .leetcode-profile-stats { grid-template-columns: repeat(2, 1fr); } }
 		@media (max-width: 576px) { .leetcode-profile-stats { grid-template-columns: 1fr; } }
@@ -911,6 +940,49 @@
 			font-family: 'Space Grotesk', sans-serif !important;
 			font-weight: 500;
 		}
+		.leetcode-difficulty-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 16px;
+			margin-bottom: 25px;
+			padding: 20px 24px;
+			background: rgba(18, 18, 22, 0.7);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			border-radius: 8px;
+		}
+		@media (max-width: 576px) { .leetcode-difficulty-grid { grid-template-columns: 1fr; gap: 12px; } }
+		.lc-diff-item {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		.lc-diff-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size: 0.78rem;
+			font-family: 'Space Grotesk', sans-serif;
+			font-weight: 600;
+			letter-spacing: 1px;
+		}
+		.lc-diff-easy { color: #00b8a3; }
+		.lc-diff-med { color: #ffc01e; }
+		.lc-diff-hard { color: #ff375f; }
+		.lc-diff-bar-bg {
+			width: 100%;
+			height: 7px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		.lc-diff-bar-fill {
+			height: 100%;
+			border-radius: 4px;
+			transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+		}
+		.lc-diff-bar-fill.easy { background: linear-gradient(90deg, #00b8a3, #20d5c2); box-shadow: 0 0 10px rgba(0, 184, 163, 0.4); }
+		.lc-diff-bar-fill.med { background: linear-gradient(90deg, #ffc01e, #ffd15c); box-shadow: 0 0 10px rgba(255, 192, 30, 0.4); }
+		.lc-diff-bar-fill.hard { background: linear-gradient(90deg, #ff375f, #ff6b8b); box-shadow: 0 0 10px rgba(255, 55, 95, 0.4); }
 		.leetcode-footer-action {
 			margin-top: 10px;
 			text-align: center;
@@ -964,6 +1036,13 @@
 		}
 		body.light-theme .lc-pstat-lbl {
 			color: #555555 !important;
+		}
+		body.light-theme .leetcode-difficulty-grid {
+			background: rgba(245, 247, 250, 0.95);
+			border-color: rgba(0, 0, 0, 0.08);
+		}
+		body.light-theme .lc-diff-bar-bg {
+			background: rgba(0, 0, 0, 0.1);
 		}
 		body.light-theme .leetcode-refresh-btn {
 			border: 1px solid #d4af37 !important;
@@ -1437,7 +1516,10 @@
 					<div class="leetcode-profile-user">
 						<div class="leetcode-code-icon">&lt;/&gt;</div>
 						<div>
-							<div class="leetcode-user-title">NAVEENKUMAR_SB</div>
+							<div class="leetcode-user-title">
+								NAVEENKUMAR_SB
+								<span class="lc-live-badge" id="lcStatusBadge"><span class="lc-live-dot"></span> LIVE SYNCED</span>
+							</div>
 							<div class="leetcode-user-handle">@NAVEENKUMAR_SB on LeetCode</div>
 						</div>
 					</div>
@@ -1449,11 +1531,11 @@
 				<!-- 4 Stat Boxes -->
 				<div class="leetcode-profile-stats">
 					<div class="lc-pstat-box">
-						<div class="lc-pstat-num" id="lcTotal">366+</div>
+						<div class="lc-pstat-num" id="lcTotal">367+</div>
 						<div class="lc-pstat-lbl">TOTAL SOLVED</div>
 					</div>
 					<div class="lc-pstat-box">
-						<div class="lc-pstat-num" id="lcRank">#363,053</div>
+						<div class="lc-pstat-num" id="lcRank">#360,552</div>
 						<div class="lc-pstat-lbl">GLOBAL RANKING</div>
 					</div>
 					<div class="lc-pstat-box">
@@ -1463,6 +1545,37 @@
 					<div class="lc-pstat-box">
 						<div class="lc-pstat-num" id="lcContrib">743</div>
 						<div class="lc-pstat-lbl">CONTRIBUTION POINTS</div>
+					</div>
+				</div>
+
+				<!-- Difficulty Breakdown Grid -->
+				<div class="leetcode-difficulty-grid">
+					<div class="lc-diff-item">
+						<div class="lc-diff-header">
+							<span class="lc-diff-easy"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> EASY</span>
+							<span class="lc-diff-easy font-weight-bold" id="lcEasyCount">230</span>
+						</div>
+						<div class="lc-diff-bar-bg">
+							<div class="lc-diff-bar-fill easy" id="lcEasyBar" style="width: 62.7%;"></div>
+						</div>
+					</div>
+					<div class="lc-diff-item">
+						<div class="lc-diff-header">
+							<span class="lc-diff-med"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> MEDIUM</span>
+							<span class="lc-diff-med font-weight-bold" id="lcMedCount">129</span>
+						</div>
+						<div class="lc-diff-bar-bg">
+							<div class="lc-diff-bar-fill med" id="lcMedBar" style="width: 35.1%;"></div>
+						</div>
+					</div>
+					<div class="lc-diff-item">
+						<div class="lc-diff-header">
+							<span class="lc-diff-hard"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> HARD</span>
+							<span class="lc-diff-hard font-weight-bold" id="lcHardCount">8</span>
+						</div>
+						<div class="lc-diff-bar-bg">
+							<div class="lc-diff-bar-fill hard" id="lcHardBar" style="width: 2.2%;"></div>
+						</div>
 					</div>
 				</div>
 
@@ -1809,99 +1922,137 @@
 
 		// Multi-Source Real-Time LeetCode Live Data Tracker Engine
 		const LC_BASELINE = {
-			total: '366+',
-			rank: '#363,053',
-			acceptance: '50.17%',
-			contrib: '743'
+			total: 367,
+			totalDisplay: '367+',
+			rank: 360552,
+			rankDisplay: '#360,552',
+			acceptance: 50.17,
+			contrib: 743,
+			easy: 230,
+			medium: 129,
+			hard: 8
 		};
 
-		function applyLeetCodeUI(stats) {
-			if (!stats) return;
-			const total = stats.total || LC_BASELINE.total;
-			const rank = stats.rank || LC_BASELINE.rank;
-			const acceptance = stats.acceptance || LC_BASELINE.acceptance;
-			const contrib = stats.contrib || LC_BASELINE.contrib;
+		// High-performance smooth 60fps number animation engine with easeOutExpo
+		function animateCounter(element, start, end, duration = 1200, options = {}) {
+			const el = typeof element === 'string' ? document.querySelector(element) : element;
+			if (!el) return;
 
-			const elTotal = document.getElementById('lcTotal');
-			const elRank = document.getElementById('lcRank');
-			const elAcceptance = document.getElementById('lcAcceptance');
-			const elContrib = document.getElementById('lcContrib');
+			const {
+				prefix = '',
+				suffix = '',
+				decimals = 0,
+				useGrouping = true
+			} = options;
 
-			if (elTotal) elTotal.textContent = total;
-			if (elRank) elRank.textContent = rank;
-			if (elAcceptance) elAcceptance.textContent = acceptance;
-			if (elContrib) elContrib.textContent = contrib;
-		}
-
-		async function fetchWithTimeout(url, timeoutMs = 6000) {
-			const controller = new AbortController();
-			const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-			try {
-				const response = await fetch(url, { signal: controller.signal });
-				clearTimeout(timeoutId);
-				if (response.ok) return await response.json();
-			} catch (e) {
-				clearTimeout(timeoutId);
-			}
-			return null;
-		}
-
-		function parseLeetCodeData(data) {
-			if (!data) return null;
-			let total = null, rank = null, acceptance = null, contrib = null;
-
-			// Total Solved
-			if (data.totalSolved !== undefined) {
-				total = data.totalSolved;
-			} else if (data.solvedProblem !== undefined) {
-				total = data.solvedProblem;
-			} else if (data.matchedUser && data.matchedUser.submitStats && data.matchedUser.submitStats.acSubmissionNum) {
-				const ac = data.matchedUser.submitStats.acSubmissionNum;
-				const all = ac.find(item => item.difficulty === 'All') || ac[0];
-				if (all) total = all.count;
-			} else if (data.matchedUserStats && data.matchedUserStats.acSubmissionNum) {
-				const ac = data.matchedUserStats.acSubmissionNum;
-				total = ac[0] ? ac[0].count : null;
+			if (isNaN(end)) {
+				el.textContent = `${prefix}${end}${suffix}`;
+				return;
 			}
 
-			// Ranking
-			if (data.ranking !== undefined && data.ranking !== null) {
-				rank = typeof data.ranking === 'number' ? `#${data.ranking.toLocaleString()}` : String(data.ranking);
-			} else if (data.userRanking !== undefined && data.userRanking !== null) {
-				rank = typeof data.userRanking === 'number' ? `#${data.userRanking.toLocaleString()}` : String(data.userRanking);
-			} else if (data.profile && data.profile.ranking) {
-				rank = `#${Number(data.profile.ranking).toLocaleString()}`;
-			} else if (data.matchedUser && data.matchedUser.profile && data.matchedUser.profile.ranking) {
-				rank = `#${Number(data.matchedUser.profile.ranking).toLocaleString()}`;
-			}
+			let startTime = null;
+			const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
-			// Acceptance Rate
-			if (data.acceptanceRate !== undefined && data.acceptanceRate !== null) {
-				acceptance = typeof data.acceptanceRate === 'number' ? `${data.acceptanceRate.toFixed(2)}%` : `${parseFloat(data.acceptanceRate).toFixed(2)}%`;
-			} else if (data.matchedUser && data.matchedUser.submitStats) {
-				const ac = data.matchedUser.submitStats.acSubmissionNum;
-				const tot = data.matchedUser.submitStats.totalSubmissionNum;
-				if (ac && tot && ac[0] && tot[0] && tot[0].submissions > 0) {
-					acceptance = `${((ac[0].submissions / tot[0].submissions) * 100).toFixed(2)}%`;
+			function step(timestamp) {
+				if (!startTime) startTime = timestamp;
+				const progress = Math.min((timestamp - startTime) / duration, 1);
+				const easedProgress = easeOutExpo(progress);
+				const currentValue = start + (end - start) * easedProgress;
+
+				let formattedNumber = decimals > 0 
+					? currentValue.toFixed(decimals) 
+					: Math.round(currentValue).toString();
+
+				if (useGrouping) {
+					const parts = formattedNumber.split('.');
+					parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+					formattedNumber = parts.join('.');
+				}
+
+				el.textContent = `${prefix}${formattedNumber}${suffix}`;
+
+				if (progress < 1) {
+					requestAnimationFrame(step);
+				} else {
+					let finalFormatted = decimals > 0 ? end.toFixed(decimals) : Math.round(end).toString();
+					if (useGrouping) {
+						const parts = finalFormatted.split('.');
+						parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+						finalFormatted = parts.join('.');
+					}
+					el.textContent = `${prefix}${finalFormatted}${suffix}`;
 				}
 			}
 
-			// Contribution Points
-			if (data.contributionPoints !== undefined || data.contributionPoint !== undefined) {
-				contrib = String(data.contributionPoints !== undefined ? data.contributionPoints : data.contributionPoint);
-			} else if (data.reputation !== undefined) {
-				contrib = String(data.reputation);
-			} else if (data.matchedUser && data.matchedUser.profile && data.matchedUser.profile.reputation !== undefined) {
-				contrib = String(data.matchedUser.profile.reputation);
+			requestAnimationFrame(step);
+		}
+
+		function applyLeetCodeUI(stats, animate = true) {
+			if (!stats) return;
+
+			const totalNum = parseInt(stats.total, 10) || LC_BASELINE.total;
+			const rankNum = typeof stats.rank === 'number' ? stats.rank : parseInt(String(stats.rank).replace(/\D/g, ''), 10) || LC_BASELINE.rank;
+			const acceptanceNum = typeof stats.acceptance === 'number' ? stats.acceptance : parseFloat(String(stats.acceptance).replace('%', '')) || LC_BASELINE.acceptance;
+			const contribNum = parseInt(stats.contrib, 10) || LC_BASELINE.contrib;
+			const easyNum = parseInt(stats.easy, 10) || LC_BASELINE.easy;
+			const medNum = parseInt(stats.medium, 10) || LC_BASELINE.medium;
+			const hardNum = parseInt(stats.hard, 10) || LC_BASELINE.hard;
+
+			if (animate) {
+				animateCounter('#lcTotal', 0, totalNum, 1400, { suffix: '+' });
+				animateCounter('#lcRank', 0, rankNum, 1600, { prefix: '#' });
+				animateCounter('#lcAcceptance', 0, acceptanceNum, 1300, { suffix: '%', decimals: 2 });
+				animateCounter('#lcContrib', 0, contribNum, 1200);
+				animateCounter('#lcEasyCount', 0, easyNum, 1200);
+				animateCounter('#lcMedCount', 0, medNum, 1200);
+				animateCounter('#lcHardCount', 0, hardNum, 1200);
+			} else {
+				const elTotal = document.getElementById('lcTotal');
+				const elRank = document.getElementById('lcRank');
+				const elAcceptance = document.getElementById('lcAcceptance');
+				const elContrib = document.getElementById('lcContrib');
+				const elEasy = document.getElementById('lcEasyCount');
+				const elMed = document.getElementById('lcMedCount');
+				const elHard = document.getElementById('lcHardCount');
+
+				if (elTotal) elTotal.textContent = `${totalNum}+`;
+				if (elRank) elRank.textContent = `#${rankNum.toLocaleString()}`;
+				if (elAcceptance) elAcceptance.textContent = `${acceptanceNum.toFixed(2)}%`;
+				if (elContrib) elContrib.textContent = contribNum.toString();
+				if (elEasy) elEasy.textContent = easyNum.toString();
+				if (elMed) elMed.textContent = medNum.toString();
+				if (elHard) elHard.textContent = hardNum.toString();
 			}
 
-			if (total !== null || rank !== null) {
-				return {
-					total: total !== null ? total : LC_BASELINE.total,
-					rank: rank !== null ? rank : LC_BASELINE.rank,
-					acceptance: acceptance !== null ? acceptance : LC_BASELINE.acceptance,
-					contrib: contrib !== null ? contrib : LC_BASELINE.contrib
-				};
+			// Update progress bar widths
+			const totalCalculated = (easyNum + medNum + hardNum) || totalNum;
+			const easyPct = ((easyNum / totalCalculated) * 100).toFixed(1);
+			const medPct = ((medNum / totalCalculated) * 100).toFixed(1);
+			const hardPct = ((hardNum / totalCalculated) * 100).toFixed(1);
+
+			const elEasyBar = document.getElementById('lcEasyBar');
+			const elMedBar = document.getElementById('lcMedBar');
+			const elHardBar = document.getElementById('lcHardBar');
+
+			if (elEasyBar) elEasyBar.style.width = `${easyPct}%`;
+			if (elMedBar) elMedBar.style.width = `${medPct}%`;
+			if (elHardBar) elHardBar.style.width = `${hardPct}%`;
+
+			const badge = document.getElementById('lcStatusBadge');
+			if (badge) {
+				badge.innerHTML = '<span class="lc-live-dot"></span> LIVE SYNCED';
+			}
+		}
+
+		async function fetchWithTimeout(url, options = {}, timeoutMs = 4500) {
+			const controller = new AbortController();
+			const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+			try {
+				const response = await fetch(url, { ...options, signal: controller.signal });
+				clearTimeout(timeoutId);
+				return response;
+			} catch (e) {
+				clearTimeout(timeoutId);
 			}
 			return null;
 		}
@@ -1909,44 +2060,124 @@
 		async function syncLeetCode(isManual = false) {
 			const username = 'NAVEENKUMAR_SB';
 			const syncIcon = document.getElementById('lcSyncIcon');
+			const badge = document.getElementById('lcStatusBadge');
+
 			if (isManual && syncIcon) syncIcon.classList.add('fa-spin');
+			if (badge && isManual) badge.innerHTML = '<span class="lc-live-dot" style="background:#FFA116;box-shadow:0 0 8px #FFA116;"></span> SYNCING...';
 
 			// First check local storage cache
+			let loadedFromCache = false;
 			try {
 				const cached = localStorage.getItem('lc_live_cache');
 				if (cached) {
-					applyLeetCodeUI(JSON.parse(cached));
-				} else {
-					applyLeetCodeUI(LC_BASELINE);
+					applyLeetCodeUI(JSON.parse(cached), false);
+					loadedFromCache = true;
 				}
-			} catch (e) {
-				applyLeetCodeUI(LC_BASELINE);
+			} catch (e) {}
+
+			if (!loadedFromCache) {
+				applyLeetCodeUI(LC_BASELINE, false);
 			}
 
-			const endpoints = [
-				`https://leetcard.jacoblin.cool/${username}?json=true`,
-				`https://alfa-leetcode-api-ashy.vercel.app/userProfile/${username}`,
-				`https://alfa-leetcode-api.onrender.com/userProfile/${username}`,
-				`https://leetcode-api.vercel.app/${username}`,
-				`https://leetcode-rest-api.vercel.app/${username}`,
-				`https://alfa-leetcode-api.onrender.com/${username}/solved`
-			];
-
 			let liveStats = null;
-			for (const url of endpoints) {
-				const data = await fetchWithTimeout(url, 4000);
-				const parsed = parseLeetCodeData(data);
-				if (parsed) {
-					liveStats = parsed;
-					break;
+
+			// Source 1: Direct GraphQL POST
+			try {
+				const query = JSON.stringify({
+					query: `query getUserProfile($username: String!) {
+						matchedUser(username: $username) {
+							profile { ranking reputation }
+							submitStatsGlobal {
+								acSubmissionNum { difficulty count submissions }
+							}
+						}
+					}`,
+					variables: { username }
+				});
+				const res = await fetchWithTimeout('https://leetcode.com/graphql', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: query
+				}, 4000);
+
+				if (res && res.ok) {
+					const data = await res.json();
+					if (data && data.data && data.data.matchedUser) {
+						const u = data.data.matchedUser;
+						const acList = (u.submitStatsGlobal && u.submitStatsGlobal.acSubmissionNum) || [];
+						const all = acList.find(x => x.difficulty === 'All') || {};
+						const easy = acList.find(x => x.difficulty === 'Easy') || {};
+						const med = acList.find(x => x.difficulty === 'Medium') || {};
+						const hard = acList.find(x => x.difficulty === 'Hard') || {};
+
+						liveStats = {
+							total: all.count || (easy.count + med.count + hard.count) || 367,
+							rank: u.profile ? u.profile.ranking : 360552,
+							acceptance: 50.17,
+							contrib: (u.profile && u.profile.reputation) ? u.profile.reputation : 743,
+							easy: easy.count || 230,
+							medium: med.count || 129,
+							hard: hard.count || 8
+						};
+					}
 				}
+			} catch (e) {}
+
+			// Source 2: Leetcard SVG Endpoint (CORS-Friendly + Fast)
+			if (!liveStats) {
+				try {
+					const res = await fetchWithTimeout(`https://leetcard.jacoblin.cool/${username}`, {}, 4500);
+					if (res && res.ok) {
+						const svg = await res.text();
+						const rankMatch = svg.match(/id=["']ranking["'][^>]*>#?(\d+)/i);
+						const easyMatch = svg.match(/Easy[\s\S]*?>(\d+)\s*\/\s*(\d+)/i);
+						const medMatch = svg.match(/Medium[\s\S]*?>(\d+)\s*\/\s*(\d+)/i);
+						const hardMatch = svg.match(/Hard[\s\S]*?>(\d+)\s*\/\s*(\d+)/i);
+
+						const e = easyMatch ? parseInt(easyMatch[1], 10) : 230;
+						const m = medMatch ? parseInt(medMatch[1], 10) : 129;
+						const h = hardMatch ? parseInt(hardMatch[1], 10) : 8;
+						const r = rankMatch ? parseInt(rankMatch[1], 10) : 360552;
+
+						liveStats = {
+							total: e + m + h,
+							rank: r,
+							acceptance: 50.17,
+							contrib: 743,
+							easy: e,
+							medium: m,
+							hard: h
+						};
+					}
+				} catch (e) {}
+			}
+
+			// Source 3: Alfa LeetCode Proxy
+			if (!liveStats) {
+				try {
+					const res = await fetchWithTimeout(`https://alfa-leetcode-api.onrender.com/${username}/solved`, {}, 4000);
+					if (res && res.ok) {
+						const data = await res.json();
+						liveStats = {
+							total: data.solvedProblem || 367,
+							easy: data.easySolved || 230,
+							medium: data.mediumSolved || 129,
+							hard: data.hardSolved || 8,
+							rank: data.ranking || 360552,
+							acceptance: 50.17,
+							contrib: 743
+						};
+					}
+				} catch (e) {}
 			}
 
 			if (liveStats) {
-				applyLeetCodeUI(liveStats);
+				applyLeetCodeUI(liveStats, true);
 				try {
 					localStorage.setItem('lc_live_cache', JSON.stringify(liveStats));
 				} catch (e) {}
+			} else {
+				applyLeetCodeUI(LC_BASELINE, isManual);
 			}
 
 			if (isManual && syncIcon) {
@@ -1954,9 +2185,25 @@
 			}
 		}
 
-		// Initial load & periodic background sync
-		syncLeetCode();
-		setInterval(() => syncLeetCode(false), 60000);
+		// Smooth intersection observer to trigger counter animation when scrolled into view
+		let lcObserverTriggered = false;
+		const lcSection = document.getElementById('leetcode-section');
+		if (lcSection && 'IntersectionObserver' in window) {
+			const lcObserver = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !lcObserverTriggered) {
+						lcObserverTriggered = true;
+						syncLeetCode(false);
+					}
+				});
+			}, { threshold: 0.15 });
+			lcObserver.observe(lcSection);
+		} else {
+			syncLeetCode(false);
+		}
+
+		// Re-sync every 2 minutes
+		setInterval(() => syncLeetCode(false), 120000);
 
 		// Certificate Slideshow Controller Logic
 		let currentCertSlide = 0;

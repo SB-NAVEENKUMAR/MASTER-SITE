@@ -940,36 +940,8 @@
 			font-family: 'Space Grotesk', sans-serif !important;
 			font-weight: 500;
 		}
-		.leetcode-difficulty-grid {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 16px;
-			margin-bottom: 25px;
-			padding: 20px 24px;
-			background: rgba(18, 18, 22, 0.7);
-			border: 1px solid rgba(255, 255, 255, 0.08);
-			border-radius: 8px;
-		}
-		@media (max-width: 576px) { .leetcode-difficulty-grid { grid-template-columns: 1fr; gap: 12px; } }
-		.lc-diff-item {
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
-		}
-		.lc-diff-header {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			font-size: 0.78rem;
-			font-family: 'Space Grotesk', sans-serif;
-			font-weight: 600;
-			letter-spacing: 1px;
-		}
-		.lc-diff-easy { color: #00b8a3; }
-		.lc-diff-med { color: #ffc01e; }
-		.lc-diff-hard { color: #ff375f; }
 		.leetcode-footer-action {
-			margin-top: 10px;
+			margin-top: 15px;
 			text-align: center;
 		}
 		.leetcode-view-btn {
@@ -1530,27 +1502,6 @@
 					</div>
 				</div>
 
-				<!-- Difficulty Breakdown Grid -->
-				<div class="leetcode-difficulty-grid">
-					<div class="lc-diff-item">
-						<div class="lc-diff-header">
-							<span class="lc-diff-easy"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> EASY</span>
-							<span class="lc-diff-easy font-weight-bold" id="lcEasyCount">230</span>
-						</div>
-					</div>
-					<div class="lc-diff-item">
-						<div class="lc-diff-header">
-							<span class="lc-diff-med"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> MEDIUM</span>
-							<span class="lc-diff-med font-weight-bold" id="lcMedCount">129</span>
-						</div>
-					</div>
-					<div class="lc-diff-item">
-						<div class="lc-diff-header">
-							<span class="lc-diff-hard"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> HARD</span>
-							<span class="lc-diff-hard font-weight-bold" id="lcHardCount">8</span>
-						</div>
-					</div>
-				</div>
 
 				<!-- Footer Action Button -->
 				<div class="leetcode-footer-action">
@@ -1976,25 +1927,16 @@
 				animateCounter('#lcRank', 0, rankNum, 1600, { prefix: '#' });
 				animateCounter('#lcAcceptance', 0, acceptanceNum, 1300, { suffix: '%', decimals: 2 });
 				animateCounter('#lcContrib', 0, contribNum, 1200);
-				animateCounter('#lcEasyCount', 0, easyNum, 1200);
-				animateCounter('#lcMedCount', 0, medNum, 1200);
-				animateCounter('#lcHardCount', 0, hardNum, 1200);
 			} else {
 				const elTotal = document.getElementById('lcTotal');
 				const elRank = document.getElementById('lcRank');
 				const elAcceptance = document.getElementById('lcAcceptance');
 				const elContrib = document.getElementById('lcContrib');
-				const elEasy = document.getElementById('lcEasyCount');
-				const elMed = document.getElementById('lcMedCount');
-				const elHard = document.getElementById('lcHardCount');
 
 				if (elTotal) elTotal.textContent = `${totalNum}+`;
 				if (elRank) elRank.textContent = `#${rankNum.toLocaleString()}`;
 				if (elAcceptance) elAcceptance.textContent = `${acceptanceNum.toFixed(2)}%`;
 				if (elContrib) elContrib.textContent = contribNum.toString();
-				if (elEasy) elEasy.textContent = easyNum.toString();
-				if (elMed) elMed.textContent = medNum.toString();
-				if (elHard) elHard.textContent = hardNum.toString();
 			}
 
 			const badge = document.getElementById('lcStatusBadge');

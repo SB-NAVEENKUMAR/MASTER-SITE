@@ -2,208 +2,556 @@
 <html lang="en">
 
 <head>
-    <title>Certificates - Naveenkumar B</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<title>Certificates &amp; Credentials - Naveenkumar B</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="css/aos.css">
+	<link rel="stylesheet" href="css/ionicons.min.css">
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+	<style>
+		:root {
+			--gold-accent: #FFD700;
+		}
+		.cert-gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 24px;
+			margin-top: 30px;
+		}
+		@media (max-width: 1100px) { .cert-gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+		@media (max-width: 768px) { .cert-gallery-grid { grid-template-columns: 1fr; } }
+		.cert-pro-card {
+			background: rgba(12, 12, 12, 0.85);
+			border: 1px solid rgba(255, 215, 0, 0.2);
+			border-radius: 10px;
+			overflow: hidden;
+			backdrop-filter: blur(15px);
+			transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+		}
+		.cert-pro-card:hover {
+			border-color: rgba(255, 215, 0, 0.5);
+			transform: translateY(-5px);
+			box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 215, 0, 0.15);
+		}
+		.cert-img-container {
+			position: relative;
+			height: 220px;
+			overflow: hidden;
+			background: radial-gradient(circle at center, #151515 0%, #050505 100%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+			padding: 8px;
+		}
+		.cert-img-container img {
+			max-width: 100%;
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			object-fit: contain;
+			transition: transform 0.5s ease;
+		}
+		.cert-pro-card:hover .cert-img-container img {
+			transform: scale(1.04);
+		}
+		.cert-card-body {
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			flex-grow: 1;
+		}
+		.cert-cat-pill {
+			display: inline-block;
+			padding: 3px 10px;
+			background: rgba(255, 215, 0, 0.08);
+			border: 1px solid var(--gold-accent);
+			color: var(--gold-accent);
+			border-radius: 20px;
+			font-size: 0.65rem;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			margin-bottom: 10px;
+			font-weight: 600;
+		}
+		.cert-card-title {
+			font-size: 1.2rem;
+			font-weight: 700;
+			color: #FFF;
+			margin-bottom: 8px;
+			line-height: 1.3;
+		}
+		.cert-card-desc {
+			color: #AAA;
+			font-size: 0.83rem;
+			line-height: 1.5;
+			margin-bottom: 15px;
+		}
+	</style>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Master</a>
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-                data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav nav ml-auto">
-                    <li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
-                    <li class="nav-item active"><a href="#" class="nav-link"><span>Certificates</span></a></li>
-                    <li class="nav-item">
-                        <div class="theme-switch-wrapper">
-                            <button id="theme-toggle-btn" class="theme-switch-btn" title="Toggle Theme">
-                                <span id="theme-icon" class="ion-ios-sunny"></span>
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">MASTER</a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="index.html#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="projects.html" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item active"><a href="#" class="nav-link"><span>Certificates</span></a></li>
+					<li class="nav-item">
+						<div class="theme-switch-wrapper">
+							<button id="theme-toggle-btn" class="theme-switch-btn" title="Toggle Theme">
+								<span id="theme-icon" class="ion-ios-sunny"></span>
+							</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-    <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');"
-        data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <h1 class="mb-3 bread">My Certificates</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
-                                    class="ion-ios-arrow-forward"></i></a></span> <span>Certificates <i
-                                class="ion-ios-arrow-forward"></i></span></p>
-                </div>
-            </div>
-        </div>
-    </section>
+	<section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h1 class="mb-3 bread">Professional Credentials</h1>
+					<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+									class="ion-ios-arrow-forward"></i></a></span> <span>Certificates <i
+								class="ion-ios-arrow-forward"></i></span></p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <section class="ftco-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <h1 class="big big-2">Certificates</h1>
-                    <h2 class="mb-4">Professional Certifications</h2>
-                    <p>A collection of my professional achievements and certifications.</p>
-                </div>
-            </div>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Certificates</h1>
+					<h2 class="mb-4">Verified Professional Credentials</h2>
+					<p>Explore all 15 verified certificates, industry awards, and specialized training credentials earned by Naveenkumar B.</p>
+				</div>
+			</div>
 
-            <div class="row">
-                <!-- Data Analytics Certificate -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/NAVEENKUMAR B.jpg');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/NAVEENKUMAR-Data Analytics_Certificate.pdf"
-                                    target="_blank">Data Analytics</a></h3>
-                            <span>Professional Certificate</span>
-                            <br>
-                            <a href="images/CERTIFICATES/NAVEENKUMAR-Data Analytics_Certificate.pdf" target="_blank"
-                                class="btn btn-primary mt-2">View PDF</a>
-                        </div>
-                    </div>
-                </div>
+			<div class="cert-gallery-grid ftco-animate">
+				<!-- Certificate 01: Data Analytics Bootcamp -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/Data Analytics Bootcamp Certificate_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/Data Analytics Bootcamp Certificate_page-0001.jpg" alt="Data Analytics Bootcamp Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-certificate mr-1"></i> Data Analytics</div>
+							<h3 class="cert-card-title">Data Analytics Bootcamp</h3>
+							<p class="cert-card-desc">Mastery of data modeling, SQL queries, Python data analysis libraries, and business intelligence reporting.</p>
+						</div>
+						<a href="images/CERTIFICATES/Data Analytics Bootcamp Certificate_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
 
-                <!-- Excel Certificate -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/NAVEENKUMAR B.jpg');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/NAVEENKUMAR_excel.pdf" target="_blank">Excel
-                                    Proficiency</a></h3>
-                            <span>Skill Certification</span>
-                            <br>
-                            <a href="images/CERTIFICATES/NAVEENKUMAR_excel.pdf" target="_blank"
-                                class="btn btn-primary mt-2">View PDF</a>
-                        </div>
-                    </div>
-                </div>
+				<!-- Certificate 02: Advanced Excel -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR_excel_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR_excel_page-0001.jpg" alt="Advanced Excel Certification">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-award mr-1"></i> Advanced Excel</div>
+							<h3 class="cert-card-title">Advanced Excel Certification</h3>
+							<p class="cert-card-desc">Validated proficiency in complex formulas, Power Query, dynamic dashboards, and automated spreadsheets.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR_excel_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
 
-                <!-- Certificate Image 1 -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/NAVEENKUMAR B (1).jpg');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/NAVEENKUMAR B (1).jpg" class="image-popup">Certificate</a>
-                            </h3>
-                            <span>Achievement</span>
-                        </div>
-                    </div>
-                </div>
+				<!-- Certificate 03: Python Software Engineering -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/Naveenkumar_CR641_certificate_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/Naveenkumar_CR641_certificate_page-0001.jpg" alt="Python Engineering Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-code mr-1"></i> Software Engineering</div>
+							<h3 class="cert-card-title">Python Software Engineering</h3>
+							<p class="cert-card-desc">Specialized certification in object-oriented Python architecture, database integration, and algorithms.</p>
+						</div>
+						<a href="images/CERTIFICATES/Naveenkumar_CR641_certificate_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
 
-                <!-- Prathyaksh M -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/Prathyaksh M.png');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/Prathyaksh M.png" class="image-popup">Completion</a></h3>
-                            <span>Certificate</span>
-                        </div>
-                    </div>
-                </div>
+				<!-- Certificate 04: Data Analytics Professional -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR-Data Analytics_Certificate_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR-Data Analytics_Certificate_page-0001.jpg" alt="Data Analytics Professional">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-chart-line mr-1"></i> Data Analytics</div>
+							<h3 class="cert-card-title">Data Analytics Professional</h3>
+							<p class="cert-card-desc">Comprehensive certification covering statistical modeling, dataset cleansing, and visual storytelling.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR-Data Analytics_Certificate_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
 
-                <!-- Certificate 88 -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/certificate-269622-88-0.jpeg');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/certificate-269622-88-0.jpeg" class="image-popup">Course
-                                    Certificate</a></h3>
-                            <span>Verification</span>
-                        </div>
-                    </div>
-                </div>
+				<!-- Certificate 05: NSS Environmental Leadership -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NSS_PLANTING.jpg" class="image-popup" title="NSS Environmental Leadership Award">
+							<img src="images/CERTIFICATES/NSS_PLANTING.jpg" alt="NSS Leadership Award">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill" style="border-color: #00FF7F; color: #00FF7F;"><i class="fas fa-leaf mr-1"></i> Leadership &amp; NSS</div>
+							<h3 class="cert-card-title">NSS Environmental Leadership</h3>
+							<p class="cert-card-desc">Statewide eco-restoration leadership: 4.5 Lakhs+ Palm Seeds, 70,000+ Saplings, and 150+ Mini Forests across Tamil Nadu.</p>
+						</div>
+						<div class="d-flex gap-2" style="gap: 8px;">
+							<a href="images/CERTIFICATES/NSS_PLANTING.jpg" target="_blank" class="btn btn-primary py-2 px-2 flex-fill" style="font-size: 0.75rem;">
+								Certificate <i class="fas fa-external-link-alt ml-1"></i>
+							</a>
+							<a href="project-nss.html" class="btn btn-outline py-2 px-2 flex-fill" style="font-size: 0.75rem; border-color: #00FF7F; color: #00FF7F;">
+								View Project <i class="fas fa-arrow-right ml-1"></i>
+							</a>
+						</div>
+					</div>
+				</div>
 
-                <!-- Certificate 96 -->
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center"
-                        style="background-image: url('images/CERTIFICATES/certificate-269622-96-0.jpeg');">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="images/CERTIFICATES/certificate-269622-96-0.jpeg" class="image-popup">Course
-                                    Certificate</a></h3>
-                            <span>Verification</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<!-- Certificate 05B: NSS Best Volunteer Award -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/best_volenter_award.jpg" class="image-popup" title="NSS Best Volunteer Award">
+							<img src="images/CERTIFICATES/best_volenter_award.jpg" alt="NSS Best Volunteer Award">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill" style="border-color: #00FF7F; color: #00FF7F;"><i class="fas fa-award mr-1"></i> NSS State Award</div>
+							<h3 class="cert-card-title">NSS Best Volunteer Award</h3>
+							<p class="cert-card-desc">Honored with the Best Volunteer Award for exemplary service, youth mobilization, and large-scale environmental contributions.</p>
+						</div>
+						<div class="d-flex gap-2" style="gap: 8px;">
+							<a href="images/CERTIFICATES/best_volenter_award.jpg" target="_blank" class="btn btn-primary py-2 px-2 flex-fill" style="font-size: 0.75rem;">
+								Certificate <i class="fas fa-external-link-alt ml-1"></i>
+							</a>
+							<a href="project-nss.html" class="btn btn-outline py-2 px-2 flex-fill" style="font-size: 0.75rem; border-color: #00FF7F; color: #00FF7F;">
+								View Project <i class="fas fa-arrow-right ml-1"></i>
+							</a>
+						</div>
+					</div>
+				</div>
 
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-8 text-center ftco-animate">
-                    <h3 class="mb-4">Document Verification</h3>
-                    <p>Additional certified documents available for review:</p>
-                    <div class="d-flex flex-wrap justify-content-center">
-                        <a href="images/CERTIFICATES/Adobe Scan 15-Apr-2025.pdf" target="_blank"
-                            class="btn btn-secondary m-2">Adobe Scan Doc</a>
-                        <a href="images/CERTIFICATES/Data Analytics Bootcamp Certificate.pdf" target="_blank"
-                            class="btn btn-secondary m-2">Bootcamp Cert</a>
-                        <a href="images/CERTIFICATES/NAVEENKUMAR B.pdf" target="_blank"
-                            class="btn btn-secondary m-2">General Cert</a>
-                        <a href="images/CERTIFICATES/Naveenkumar_CR641_certificate.pdf" target="_blank"
-                            class="btn btn-secondary m-2">CR641 Course</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+				<!-- Certificate 05C: Official NSS Volunteer ID Card -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/nss_id_card.jpg" class="image-popup" title="Official NSS Volunteer Identity Card & Accreditation">
+							<img src="images/CERTIFICATES/nss_id_card.jpg" alt="Official NSS Volunteer Identity Card">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill" style="border-color: #00FF7F; color: #00FF7F;"><i class="fas fa-id-card mr-1"></i> Official Credential</div>
+							<h3 class="cert-card-title">NSS Volunteer Identity Card</h3>
+							<p class="cert-card-desc">Official Government-authorized National Service Scheme volunteer identity accreditation and membership record.</p>
+						</div>
+						<div class="d-flex gap-2" style="gap: 8px;">
+							<a href="images/CERTIFICATES/nss_id_card.jpg" target="_blank" class="btn btn-primary py-2 px-2 flex-fill" style="font-size: 0.75rem;">
+								View ID <i class="fas fa-external-link-alt ml-1"></i>
+							</a>
+							<a href="project-nss.html" class="btn btn-outline py-2 px-2 flex-fill" style="font-size: 0.75rem; border-color: #00FF7F; color: #00FF7F;">
+								View Project <i class="fas fa-arrow-right ml-1"></i>
+							</a>
+						</div>
+					</div>
+				</div>
 
-    <footer class="ftco-footer ftco-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+				<!-- Certificate 05D: NSS Field Leadership Action -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/nss_my_image.jpg" class="image-popup" title="NSS Field Leadership & Social Impact Action">
+							<img src="images/CERTIFICATES/nss_my_image.jpg" alt="NSS Field Leadership in Action">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill" style="border-color: #00FF7F; color: #00FF7F;"><i class="fas fa-users mr-1"></i> Field Leadership</div>
+							<h3 class="cert-card-title">NSS Leadership &amp; Youth Action</h3>
+							<p class="cert-card-desc">On-ground documentation of leadership during state-wide environmental campaigns, workshops, and youth mobilization.</p>
+						</div>
+						<div class="d-flex gap-2" style="gap: 8px;">
+							<a href="images/CERTIFICATES/nss_my_image.jpg" target="_blank" class="btn btn-primary py-2 px-2 flex-fill" style="font-size: 0.75rem;">
+								View Photo <i class="fas fa-external-link-alt ml-1"></i>
+							</a>
+							<a href="project-nss.html" class="btn btn-outline py-2 px-2 flex-fill" style="font-size: 0.75rem; border-color: #00FF7F; color: #00FF7F;">
+								View Project <i class="fas fa-arrow-right ml-1"></i>
+							</a>
+						</div>
+					</div>
+				</div>
 
-    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-                stroke="#F96D00" />
-        </svg></div>
+				<!-- Certificate 06: Data Analytics Master -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/Data Analytics_Certificate_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/Data Analytics_Certificate_page-0001.jpg" alt="Data Analytics Master Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-database mr-1"></i> Data Intelligence</div>
+							<h3 class="cert-card-title">Data Analytics Master</h3>
+							<p class="cert-card-desc">Advanced competency in enterprise dataset manipulation, data cleaning, and business intelligence.</p>
+						</div>
+						<a href="images/CERTIFICATES/Data Analytics_Certificate_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/scrollax.min.js"></script>
-    <script src="js/theme-toggle.js"></script>
-    <script src="js/main.js"></script>
+				<!-- Certificate 07: Academic Training Part 1 -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0001.jpg" alt="Academic Training Certificate 1">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-graduation-cap mr-1"></i> Academic Training</div>
+							<h3 class="cert-card-title">Academic Training Credential (I)</h3>
+							<p class="cert-card-desc">Official academic training credential validating technical coursework and practical laboratory sessions.</p>
+						</div>
+						<a href="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 08: Academic Training Part 2 -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0002.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0002.jpg" alt="Academic Training Certificate 2">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-graduation-cap mr-1"></i> Academic Training</div>
+							<h3 class="cert-card-title">Academic Training Credential (II)</h3>
+							<p class="cert-card-desc">Verified documentation certifying advanced technical workshop completion and practical projects.</p>
+						</div>
+						<a href="images/CERTIFICATES/Adobe Scan 15-Apr-2025_page-0002.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 09: Professional Achievement -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR B_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR B_page-0001.jpg" alt="Professional Achievement Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-user-check mr-1"></i> Professional Competency</div>
+							<h3 class="cert-card-title">Professional Achievement</h3>
+							<p class="cert-card-desc">Verified certification recognizing engineering discipline, problem solving, and technical execution.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR B_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 10: Technical Skills Verification -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR-B_page-0001.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR-B_page-0001.jpg" alt="Technical Skills Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-tools mr-1"></i> Technical Certification</div>
+							<h3 class="cert-card-title">Technical Skills Verification</h3>
+							<p class="cert-card-desc">Validated proficiency in core computer science subjects, software testing, and algorithm design.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR-B_page-0001.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 11: Engineering Excellence -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR B (1).jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR B (1).jpg" alt="Engineering Excellence Credential">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-star mr-1"></i> Excellence Award</div>
+							<h3 class="cert-card-title">Engineering Excellence Award</h3>
+							<p class="cert-card-desc">Recognition of outstanding performance in academic projects and technical innovation competitions.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR B (1).jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 12: Verified Technical Credential -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR B.jpg" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR B.jpg" alt="Verified Technical Credential">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-id-badge mr-1"></i> Technical Credential</div>
+							<h3 class="cert-card-title">Verified Technical Credential</h3>
+							<p class="cert-card-desc">Official certification confirming expertise in IT domain applications and system development.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR B.jpg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 13: Industry Certification 88 -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/certificate-269622-88-0.jpeg" class="image-popup">
+							<img src="images/CERTIFICATES/certificate-269622-88-0.jpeg" alt="Industry Certification 88">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-check-circle mr-1"></i> Industry Credential</div>
+							<h3 class="cert-card-title">Industry Certification (269622-88)</h3>
+							<p class="cert-card-desc">Verified course completion credential certifying mastery in applied technology and engineering practice.</p>
+						</div>
+						<a href="images/CERTIFICATES/certificate-269622-88-0.jpeg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 14: Industry Certification 96 -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/certificate-269622-96-0.jpeg" class="image-popup">
+							<img src="images/CERTIFICATES/certificate-269622-96-0.jpeg" alt="Industry Certification 96">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-check-circle mr-1"></i> Industry Credential</div>
+							<h3 class="cert-card-title">Industry Certification (269622-96)</h3>
+							<p class="cert-card-desc">Verified technical course certification covering specialized software engineering modules.</p>
+						</div>
+						<a href="images/CERTIFICATES/certificate-269622-96-0.jpeg" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+
+				<!-- Certificate 15: Digital Skills Badge & Certificate -->
+				<div class="cert-pro-card">
+					<div class="cert-img-container">
+						<a href="images/CERTIFICATES/NAVEENKUMAR_B.png" class="image-popup">
+							<img src="images/CERTIFICATES/NAVEENKUMAR_B.png" alt="Digital Badge Certificate">
+						</a>
+					</div>
+					<div class="cert-card-body">
+						<div>
+							<div class="cert-cat-pill"><i class="fas fa-laptop mr-1"></i> Digital Badge</div>
+							<h3 class="cert-card-title">Digital Skills Badge &amp; Certificate</h3>
+							<p class="cert-card-desc">Verified digital badge certifying continuous learning, software competencies, and project achievements.</p>
+						</div>
+						<a href="images/CERTIFICATES/NAVEENKUMAR_B.png" target="_blank" class="btn btn-primary py-2 px-3 w-100" style="font-size: 0.8rem;">
+							View Full Certificate <i class="fas fa-external-link-alt ml-1"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Naveenkumar B. All rights reserved</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script src="js/theme-toggle.js"></script>
+	<script src="js/main.js"></script>
 
 </body>
 

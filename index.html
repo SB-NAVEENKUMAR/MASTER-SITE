@@ -968,21 +968,6 @@
 		.lc-diff-easy { color: #00b8a3; }
 		.lc-diff-med { color: #ffc01e; }
 		.lc-diff-hard { color: #ff375f; }
-		.lc-diff-bar-bg {
-			width: 100%;
-			height: 7px;
-			background: rgba(255, 255, 255, 0.1);
-			border-radius: 4px;
-			overflow: hidden;
-		}
-		.lc-diff-bar-fill {
-			height: 100%;
-			border-radius: 4px;
-			transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-		}
-		.lc-diff-bar-fill.easy { background: linear-gradient(90deg, #00b8a3, #20d5c2); box-shadow: 0 0 10px rgba(0, 184, 163, 0.4); }
-		.lc-diff-bar-fill.med { background: linear-gradient(90deg, #ffc01e, #ffd15c); box-shadow: 0 0 10px rgba(255, 192, 30, 0.4); }
-		.lc-diff-bar-fill.hard { background: linear-gradient(90deg, #ff375f, #ff6b8b); box-shadow: 0 0 10px rgba(255, 55, 95, 0.4); }
 		.leetcode-footer-action {
 			margin-top: 10px;
 			text-align: center;
@@ -1040,9 +1025,6 @@
 		body.light-theme .leetcode-difficulty-grid {
 			background: rgba(245, 247, 250, 0.95);
 			border-color: rgba(0, 0, 0, 0.08);
-		}
-		body.light-theme .lc-diff-bar-bg {
-			background: rgba(0, 0, 0, 0.1);
 		}
 		body.light-theme .leetcode-refresh-btn {
 			border: 1px solid #d4af37 !important;
@@ -1555,26 +1537,17 @@
 							<span class="lc-diff-easy"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> EASY</span>
 							<span class="lc-diff-easy font-weight-bold" id="lcEasyCount">230</span>
 						</div>
-						<div class="lc-diff-bar-bg">
-							<div class="lc-diff-bar-fill easy" id="lcEasyBar" style="width: 62.7%;"></div>
-						</div>
 					</div>
 					<div class="lc-diff-item">
 						<div class="lc-diff-header">
 							<span class="lc-diff-med"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> MEDIUM</span>
 							<span class="lc-diff-med font-weight-bold" id="lcMedCount">129</span>
 						</div>
-						<div class="lc-diff-bar-bg">
-							<div class="lc-diff-bar-fill med" id="lcMedBar" style="width: 35.1%;"></div>
-						</div>
 					</div>
 					<div class="lc-diff-item">
 						<div class="lc-diff-header">
 							<span class="lc-diff-hard"><i class="fas fa-circle mr-1" style="font-size:0.6rem;"></i> HARD</span>
 							<span class="lc-diff-hard font-weight-bold" id="lcHardCount">8</span>
-						</div>
-						<div class="lc-diff-bar-bg">
-							<div class="lc-diff-bar-fill hard" id="lcHardBar" style="width: 2.2%;"></div>
 						</div>
 					</div>
 				</div>
@@ -2023,20 +1996,6 @@
 				if (elMed) elMed.textContent = medNum.toString();
 				if (elHard) elHard.textContent = hardNum.toString();
 			}
-
-			// Update progress bar widths
-			const totalCalculated = (easyNum + medNum + hardNum) || totalNum;
-			const easyPct = ((easyNum / totalCalculated) * 100).toFixed(1);
-			const medPct = ((medNum / totalCalculated) * 100).toFixed(1);
-			const hardPct = ((hardNum / totalCalculated) * 100).toFixed(1);
-
-			const elEasyBar = document.getElementById('lcEasyBar');
-			const elMedBar = document.getElementById('lcMedBar');
-			const elHardBar = document.getElementById('lcHardBar');
-
-			if (elEasyBar) elEasyBar.style.width = `${easyPct}%`;
-			if (elMedBar) elMedBar.style.width = `${medPct}%`;
-			if (elHardBar) elHardBar.style.width = `${hardPct}%`;
 
 			const badge = document.getElementById('lcStatusBadge');
 			if (badge) {
